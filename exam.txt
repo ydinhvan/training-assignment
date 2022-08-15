@@ -1,2 +1,2 @@
-ls: list of directory
-cd: change directory
+dinh van y 
+dinh van y
