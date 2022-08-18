@@ -34,7 +34,7 @@ uname : Unix name: print detail information about system
 top : display list of running process
 history :  list command used
 man : show manual instruction of command
-echo : move data into a file
+echo :  move data into a file
 zip : compress file into a zip archive
 hostname : show the name of host/network
 useradd, userdel : creat/delete user account
