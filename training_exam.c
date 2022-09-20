@@ -3,14 +3,16 @@
 #include <string.h>
 #include <signal.h>
 #include <stdbool.h> 
+//#include "lib_training_exam.h"
+
 
 bool status = true;
-
 
 void sigintHandler(int sig_num);
 void execute_command();
 void lib_read_write();
 void intinial_func();
+
 
 int main( int argc, char *argv[] )
 {
@@ -20,43 +22,64 @@ int main( int argc, char *argv[] )
     //clear console
     system("clear");
 
+    // declare input variation
     char main_mode;
 
     // intinial program
     intinial_func();
     
-    //printf("%c\n",main_mode);
-    while(status==true)
+    while(status==true)         // If Ctrl+C isn't pressed
     {
-        //Type input
+        //Type input mode
         scanf("%c",&main_mode);
+        // Skip if main_mode ='\n'
+        if (main_mode == '\n')
+        {
+            continue;
+        }
+        // print main_mode
+        printf("%c\n",main_mode);
         if (main_mode == '1')
         {
+            // mode 1: execute command
             execute_command(&main_mode);
             main_mode = '\0';
             intinial_func();
         }
         else if (main_mode == '2')
         {
-            lib_read_write(&main_mode);
+            lib_read_write();
             main_mode = '\0';
             intinial_func();
         }
         else 
         {
             printf("Type error -> Please type again!\n");
-            //scanf("%c",&main_mode);
         }
     }
     return 0;
 }
 
+// Signal Handler for SIGINT 
+void sigintHandler(int sig_num)
+{
+    printf("\nDo you want to close? yes(y) or no(n): ");
+    char quit;
+    scanf("%c",&quit);
+    if (quit =='y')
+    {
+        status = false;
+    }
+}
+
+// Intinial function: print instructions
 void intinial_func()
 {
     printf("\nApplication has 2 mode: Read/Write and execute a command\n");
     printf("Type '1' to choice execute command mode\n");
     printf("Type '2' to choice read/write mode\n");
 }
+
 /*
 // Block signal
 void signal_block()
@@ -76,100 +99,64 @@ void signal_block()
 }
 */
 
-// Signal Handler for SIGINT 
-void sigintHandler(int sig_num)
-{
-    // Reset handler to catch SIGINT next time.
-    // Refer http://en.cppreference.com/w/c/program/signal
-    // signal(SIGINT, sigintHandler);
-    // printf("\n Cannot be terminated using Ctrl+C \n");
-    printf("\nDo you want to close? yes(y) or no(n): ");
-    char quit;
-    scanf("%c",&quit);
-    if (quit =='y')
-    {
-        status = false;
-    }
-}
-
+// function of mode 1: execute commnad
 void execute_command(char* main_mode)
 {
-    //char input_command;
-    //scanf("%c",&input_command);
-    //check if command processor is available in the operating system or not
-    //if(system(NULL))
-    //{
-
         /* Ask user for command. */
         printf("Type command you want to execute: ");
-
+        // Mallo memory to save input command
         char *input_command = (char*)malloc(256);
         if (input_command == NULL)
         {
             printf("No memory\n");
             return;
         }
-      
         /* Get the name, with size limit. */
-        
         fgets(input_command, 256 , stdin);
-        //gets(input_command);
-
-        printf("%s",input_command);
         /* Remove trailing newline, if there. */
         if ((strlen(input_command) > 0) && (input_command[strlen (input_command) - 1] == '\n'))
         {
             input_command[strlen (input_command) - 1] = '\0';
         }
-
-        //char input_command[20];
-        //scanf("%20[^\n]", input_command);
+        // get data from stdin buffer and move to input_command
         fgets(input_command, 256 , stdin);
         /* Excute command */
         system(input_command);
-    
         /* Free memory and exit. */
         free (input_command);
-        
         printf("\n");
+
         printf("Command executed! Type 'c' to continue, random to back: ");
 
         scanf("%c",main_mode);
-
+        // check condition to continue or break
         if(*main_mode=='c')
         {
             execute_command(main_mode);
         }
         
-    // }
-    // else
-    // {
-    //    printf("Command processor is not present \n");
-    // }
 }
 
-void lib_read_write(char* main_mode)
+void lib_read_write()
 {
-    /* Ask user for command. */
-    printf("Type file you want to open\n ");
-    
+    /* Ask user for file. */
+    printf("Type file you want to open\n");
+    // malloc memory to save data
     char *file_name = (char*)malloc(256);
+    // check if malloc to NULL memory
     if (file_name == NULL)
     {
         printf("No memory\n");
         return;
     }
-    /* Get the name, with size limit. */
-    
+    /* Get the name from stdin buffer, with size limit. */   
     fgets(file_name, 256 , stdin);
-    //gets(input_command);
-
     /* Remove trailing newline, if there. */
     if ((strlen(file_name) > 0) && (file_name[strlen(file_name) - 1] == '\n'))
     {
         file_name[strlen(file_name) - 1] = '\0';
     }
-
+    
     fgets(file_name, 256 , stdin);
 
     /* Remove trailing newline, if there. */
@@ -179,7 +166,7 @@ void lib_read_write(char* main_mode)
     }
     
     FILE* ptr;
-    ptr = fopen(file_name, "r+");
+    ptr = fopen(file_name, "a+");
  
     if (NULL == ptr) {
         printf("file can't be opened \n");
@@ -195,23 +182,47 @@ void lib_read_write(char* main_mode)
         
         if(mode == 'r')
         {
-            char ch;
+            char ch='\0';
             printf("content of this file are \n");
             // Printing what is written in file
             // character by character using loop.
-            do {
-                ch = fgetc(ptr);
+            ch = fgetc(ptr);
+            // Checking if character is not EOF.
+            // If it is EOF stop eading.
+            while (ch != EOF)
+            {
+                
                 printf("%c", ch);
-        
-                // Checking if character is not EOF.
-                // If it is EOF stop eading.
-            } while (ch != EOF);
+                ch = fgetc(ptr);
+            } 
+            printf("\n");
+            printf("Command executed! Type 'c' to continue, random to back: ");
+            mode = '\0';
+            scanf("%c",&mode);
+            scanf("%c",&mode);
+            if(mode=='c')
+            {
+                lib_read_write();
+            }
+
         }
         else if (mode == 'w')
         {
-            char string[100];
-            printf("Type whatever you want\n");
-            fgets(string, 100, stdin);
+            printf("\nIn writing mode, type what ever you want: ");
+            char *input_command = (char*)malloc(256);
+            /* Get the name, with size limit. */
+            
+            fgets(input_command, 256 , stdin);
+
+            /* Remove trailing newline, if there. */
+            if ((strlen(input_command) > 0) && (input_command[strlen (input_command) - 1] == '\n'))
+            {
+                input_command[strlen (input_command) - 1] = '\0';
+            }
+
+            fgets(input_command, 256 , stdin);
+            fprintf(ptr,"%s",input_command);
+            free (input_command);
         }
         else 
         {
