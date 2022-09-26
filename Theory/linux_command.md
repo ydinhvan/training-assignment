@@ -14,7 +14,8 @@
 **mv** : move/rename file
 **mkdir** : make a new directory
 **rmdir** : delete a empty directory
-**rm** : remove directory and contents within them
+**rm** : remove file
+**rm -rf**: remove directory and files in directory
 **touch** : creat a blank new file
 **locate** : search file 
 **locate -i** : search file insensitive
@@ -45,3 +46,5 @@
 **Ctrl+Q** : unfreeze
 **Ctrl+A** : move to begin line
 **Ctrl+E** : move to end line  
+**ps -aux|grep process-name** : check status of process
+**sudo kill -9 ID_process** : terminate process with sudo's permision

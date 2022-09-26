@@ -1,0 +1,3 @@
+/home/vany/Desktop/work/myproject/training_assign/build/CMakeFiles/rebuild_cache.dir
+/home/vany/Desktop/work/myproject/training_assign/build/CMakeFiles/edit_cache.dir
+/home/vany/Desktop/work/myproject/training_assign/build/CMakeFiles/training_exam.dir

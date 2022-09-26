@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/vany/Desktop/work/myproject/cmakeQuichStart/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/CmakeLists.txt.dir/main.cpp.o -c /home/vany/Desktop/work/myproject/cmakeQuichStart/main.cpp",
-  "file": "/home/vany/Desktop/work/myproject/cmakeQuichStart/main.cpp"
-}
-]

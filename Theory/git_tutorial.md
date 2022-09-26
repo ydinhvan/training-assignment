@@ -11,3 +11,5 @@
 * **git branch**: create a branch
 * **git checkout** switch to the branch
 * **git merge**: integrate the changes from another branch  
+
+![Git flow diagram](https://i.redd.it/nm1w0gnf2zh11.png)

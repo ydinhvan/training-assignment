@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/Tutorial.dir/Tutorial.c.o  -o Tutorial 
