@@ -4,8 +4,12 @@
 - #inlcude"file_name": header file of own program. normal need path to file.
 ### 2. Permission
 Permission: access option 
-syntax: **ower** + **usergroup** + **everyone**
+syntax: 
+**u** = owner; **g** = group; **o** = others; **a** = all; 
 **r** = read; **w** = write; **x** = execute; **-** = no permission
+**Note**: 
+**d** = directory;
+**-** = file; 
 
 **0** = - = no permission
 **1** = -x = execute
@@ -50,8 +54,8 @@ Ex: gcc -o bin/statically-linked   bin/main.o   bin/static/lib_name.o
 Ex: ./bin/staticlly-linked
 
 **Note**: 
-**-l**: link to access the library 
-**-L**: link to folder contain object file
+**-l**: is the name of the library want to link 
+**-L**: is the path to the directory containing the libraries
 (**no space** between -l and folder) 
 ### 5. Build shared library
 

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vany/Desktop/work/myproject/CMake_Example/Step1/tutorial.c
+stdio.h
+-
+TutorialConfig.h
+/home/vany/Desktop/work/myproject/CMake_Example/Step1/TutorialConfig.h
+stdlib.h
+-
+
+TutorialConfig.h
+

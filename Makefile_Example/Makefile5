@@ -1,0 +1,61 @@
+all:myapp
+
+# which compiler
+CC = gcc
+
+# where to install
+INSTDIR = application/
+
+# where are include files
+INCLUDE = .
+
+# options for development
+CFLAGS = -g -Wall -ansi
+
+# Options of release
+# CFLAGS = -o -Wall -ansi
+
+
+# clean .o file from last compile
+clean:      
+	-rm main.o 2.o 3.o 
+	-rm -rf application
+	-rm $(MYLIB)
+
+# make directory to save myapp
+make_directory:
+	-mkdir application
+
+# install app in target directory
+install: myapp
+	@if [ -d $(INSTDIR) ]; \
+		then \
+		cp myapp $(INSTDIR) &&\
+		chmod a+x $(INSTDIR)/myapp && \
+		chmod og-w $(INSTDIR)/myapp && \
+		echo "Installed in $(INSTDIR)" ;\
+	else \
+		echo "Sorry, $(INSTDIR) does not exits"; false ;\
+	fi
+# Note
+# need space in before -d
+# &&: only execute if the previous command succeeded
+# -: ignore the result of command. Execute succeed 
+#although there is no object and the rm command return error.
+
+# local libraries
+MYLIB = mylib.a
+
+myapp: main.o $(MYLIB)
+	$(CC) -o myapp main.o $(MYLIB)
+
+$(MYLIB): $(MYLIB)(2.o) $(MYLIB)(3.o)
+main.o: main.c a.h
+2.o: 2.c a.h b.h
+3.o: 3.c b.h c.h
+
+
+# myapp <- main.o <- main.c a.h
+#		<- mylib <-  2.o  <- 2.c a.h b.h 
+#					 3.o  <- 3.c b.h c.h	
+

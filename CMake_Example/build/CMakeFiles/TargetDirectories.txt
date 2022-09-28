@@ -1,3 +1,0 @@
-/home/vany/Desktop/work/myproject/CMake_Example/build/CMakeFiles/rebuild_cache.dir
-/home/vany/Desktop/work/myproject/CMake_Example/build/CMakeFiles/edit_cache.dir
-/home/vany/Desktop/work/myproject/CMake_Example/build/CMakeFiles/Tutorial.dir

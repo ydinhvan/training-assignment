@@ -95,5 +95,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/training_exam.dir/DependInfo.cmake"
+  "CMakeFiles/training_exam_app.dir/DependInfo.cmake"
   )

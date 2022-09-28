@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/lib_training_exam.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+signal.h
+-
+stdbool.h
+-
+
+/home/vany/Desktop/work/myproject/training_assign/src/execute_command.c
+lib_training_exam.h
+/home/vany/Desktop/work/myproject/training_assign/src/lib_training_exam.h
+
+/home/vany/Desktop/work/myproject/training_assign/src/main.c
+stdio.h
+-
+stdbool.h
+-
+lib_training_exam.h
+/home/vany/Desktop/work/myproject/training_assign/src/lib_training_exam.h
+
+/home/vany/Desktop/work/myproject/training_assign/src/read_write.c
+lib_training_exam.h
+/home/vany/Desktop/work/myproject/training_assign/src/lib_training_exam.h
+
+/home/vany/Desktop/work/myproject/training_assign/src/signal_handler.c
+lib_training_exam.h
+/home/vany/Desktop/work/myproject/training_assign/src/lib_training_exam.h
+

@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/training_exam.dir/src/training_exam.c.o CMakeFiles/training_exam.dir/src/execute_command.c.o CMakeFiles/training_exam.dir/src/read_write.c.o CMakeFiles/training_exam.dir/src/signal_handler.c.o  -o training_exam 

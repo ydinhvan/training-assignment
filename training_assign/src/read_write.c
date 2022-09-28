@@ -2,10 +2,10 @@
 
 void lib_read_write()
 {
-    system("cd /home/vany/Desktop/work/myproject/training_assign/test");
+    //system("cd /home/vany/Desktop/work/myproject/training_assign/test");
     /* Ask user for file. */
     printf("Type file you want to open\n");
-    // malloc memory to save data
+    // malloc memory to save data from stdin
     char *file_name = (char*)malloc(256);
     // check if malloc to NULL memory
     if (file_name == NULL)
@@ -29,8 +29,10 @@ void lib_read_write()
         file_name[strlen(file_name) - 1] = '\0';
     }
     
+    // declare a file
     FILE* ptr;
     ptr = fopen(file_name, "a+");
+    // Option a+: Open for update, append to end of file. If there no, creat new file
  
     if (NULL == ptr) {
         printf("file can't be opened \n");
@@ -54,20 +56,19 @@ void lib_read_write()
             // Checking if character is not EOF.
             // If it is EOF stop eading.
             while (ch != EOF)
-            {
-                
+            { 
                 printf("%c", ch);
                 ch = fgetc(ptr);
             } 
             printf("\n");
-            printf("Command executed! Type 'c' to continue, random to back: ");
-            mode = '\0';
-            scanf("%c",&mode);
-            scanf("%c",&mode);
-            if(mode=='c')
-            {
-                lib_read_write();
-            }
+            // printf("Command executed! Type 'c' to continue, random to back: ");
+            // mode = '\0';
+            // scanf("%c",&mode);
+            // scanf("%c",&mode);
+            // if(mode=='c')
+            // {
+            //     lib_read_write();
+            // }
 
         }
         else if (mode == 'w')
@@ -85,6 +86,10 @@ void lib_read_write()
             }
 
             fgets(input_command, 256 , stdin);
+            if(strlen(input_command) > 256)
+            {
+                printf("String two long, just get 256 character");
+            }
             fprintf(ptr,"%s",input_command);
             free (input_command);
         }
@@ -93,7 +98,6 @@ void lib_read_write()
             printf("Type error -> Please type again!\n");
         }
     }
-        
     // Closing the file
     fclose(ptr);
 }

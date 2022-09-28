@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named training_exam
+# Target rules for targets named training_exam_app
 
 # Build rule for target.
-training_exam: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 training_exam
-.PHONY : training_exam
+training_exam_app: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 training_exam_app
+.PHONY : training_exam_app
 
 # fast build rule for target.
-training_exam/fast:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/build
-.PHONY : training_exam/fast
+training_exam_app/fast:
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/build
+.PHONY : training_exam_app/fast
 
 src/execute_command.o: src/execute_command.c.o
 
@@ -129,7 +129,7 @@ src/execute_command.o: src/execute_command.c.o
 
 # target to build an object file
 src/execute_command.c.o:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/execute_command.c.o
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/execute_command.c.o
 .PHONY : src/execute_command.c.o
 
 src/execute_command.i: src/execute_command.c.i
@@ -138,7 +138,7 @@ src/execute_command.i: src/execute_command.c.i
 
 # target to preprocess a source file
 src/execute_command.c.i:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/execute_command.c.i
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/execute_command.c.i
 .PHONY : src/execute_command.c.i
 
 src/execute_command.s: src/execute_command.c.s
@@ -147,8 +147,35 @@ src/execute_command.s: src/execute_command.c.s
 
 # target to generate assembly for a file
 src/execute_command.c.s:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/execute_command.c.s
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/execute_command.c.s
 .PHONY : src/execute_command.c.s
+
+src/main.o: src/main.c.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.c.o:
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/main.c.o
+.PHONY : src/main.c.o
+
+src/main.i: src/main.c.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.c.i:
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/main.c.i
+.PHONY : src/main.c.i
+
+src/main.s: src/main.c.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.c.s:
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/main.c.s
+.PHONY : src/main.c.s
 
 src/read_write.o: src/read_write.c.o
 
@@ -156,7 +183,7 @@ src/read_write.o: src/read_write.c.o
 
 # target to build an object file
 src/read_write.c.o:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/read_write.c.o
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/read_write.c.o
 .PHONY : src/read_write.c.o
 
 src/read_write.i: src/read_write.c.i
@@ -165,7 +192,7 @@ src/read_write.i: src/read_write.c.i
 
 # target to preprocess a source file
 src/read_write.c.i:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/read_write.c.i
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/read_write.c.i
 .PHONY : src/read_write.c.i
 
 src/read_write.s: src/read_write.c.s
@@ -174,7 +201,7 @@ src/read_write.s: src/read_write.c.s
 
 # target to generate assembly for a file
 src/read_write.c.s:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/read_write.c.s
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/read_write.c.s
 .PHONY : src/read_write.c.s
 
 src/signal_handler.o: src/signal_handler.c.o
@@ -183,7 +210,7 @@ src/signal_handler.o: src/signal_handler.c.o
 
 # target to build an object file
 src/signal_handler.c.o:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/signal_handler.c.o
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/signal_handler.c.o
 .PHONY : src/signal_handler.c.o
 
 src/signal_handler.i: src/signal_handler.c.i
@@ -192,7 +219,7 @@ src/signal_handler.i: src/signal_handler.c.i
 
 # target to preprocess a source file
 src/signal_handler.c.i:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/signal_handler.c.i
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/signal_handler.c.i
 .PHONY : src/signal_handler.c.i
 
 src/signal_handler.s: src/signal_handler.c.s
@@ -201,35 +228,8 @@ src/signal_handler.s: src/signal_handler.c.s
 
 # target to generate assembly for a file
 src/signal_handler.c.s:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/signal_handler.c.s
+	$(MAKE) -f CMakeFiles/training_exam_app.dir/build.make CMakeFiles/training_exam_app.dir/src/signal_handler.c.s
 .PHONY : src/signal_handler.c.s
-
-src/training_exam.o: src/training_exam.c.o
-
-.PHONY : src/training_exam.o
-
-# target to build an object file
-src/training_exam.c.o:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/training_exam.c.o
-.PHONY : src/training_exam.c.o
-
-src/training_exam.i: src/training_exam.c.i
-
-.PHONY : src/training_exam.i
-
-# target to preprocess a source file
-src/training_exam.c.i:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/training_exam.c.i
-.PHONY : src/training_exam.c.i
-
-src/training_exam.s: src/training_exam.c.s
-
-.PHONY : src/training_exam.s
-
-# target to generate assembly for a file
-src/training_exam.c.s:
-	$(MAKE) -f CMakeFiles/training_exam.dir/build.make CMakeFiles/training_exam.dir/src/training_exam.c.s
-.PHONY : src/training_exam.c.s
 
 # Help Target
 help:
@@ -239,19 +239,19 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... training_exam"
+	@echo "... training_exam_app"
 	@echo "... src/execute_command.o"
 	@echo "... src/execute_command.i"
 	@echo "... src/execute_command.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/read_write.o"
 	@echo "... src/read_write.i"
 	@echo "... src/read_write.s"
 	@echo "... src/signal_handler.o"
 	@echo "... src/signal_handler.i"
 	@echo "... src/signal_handler.s"
-	@echo "... src/training_exam.o"
-	@echo "... src/training_exam.i"
-	@echo "... src/training_exam.s"
 .PHONY : help
 
 

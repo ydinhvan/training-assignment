@@ -42,3 +42,9 @@ add_executable(TARGET source_file)
 
 ### 2. Function in CMakeLists.txt
 
+### 3. Some commonly used command
+- **message**: prints given message
+- **cmake_minimum_required**: sets minimum version of cmake to be used
+- **add_executable**: adds executable target with given name
+- **add_library**: adds a library target to be build from listed source files
+- **add_subdirectory**: adds a subdirectory to build

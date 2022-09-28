@@ -6,11 +6,19 @@ extern bool status;
 void sigintHandler(int sig_num)
 {
     printf("\nDo you want to close? yes(y) or no(n): ");
-    char quit;
-    scanf("%c",&quit);
-    if (quit =='y')
+    char* quit=NULL;
+    scanf("%m[^\n]%*c",&quit);
+    if (*quit =='y')
     {
-        status = false;
+        //status = false;
+        // free memory after malloc
+        free(quit);
+        // return 0 to the parent process
+        exit(0);
+    }
+    else
+    {
+        sigintHandler(SIGINT);
     }
 }
 
