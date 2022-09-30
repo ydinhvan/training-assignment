@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vany/Desktop/work/myproject/training_assign/build/CMakeFiles /home/vany/Desktop/work/myproject/training_assign/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/vany/Desktop/work/myproject/training_assign/build/CMakeFiles /home/vany/Desktop/work/myproject/training_assign/build/src_lib/CMakeFiles/progress.marks
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(MAKE) -f CMakeFiles/Makefile2 src_lib/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vany/Desktop/work/myproject/training_assign/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(MAKE) -f CMakeFiles/Makefile2 src_lib/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,44 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(MAKE) -f CMakeFiles/Makefile2 src_lib/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(MAKE) -f CMakeFiles/Makefile2 src_lib/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Read_Write_lib
+# Convenience name for target.
+src_lib/CMakeFiles/Read_Write_lib.dir/rule:
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(MAKE) -f CMakeFiles/Makefile2 src_lib/CMakeFiles/Read_Write_lib.dir/rule
+.PHONY : src_lib/CMakeFiles/Read_Write_lib.dir/rule
 
-# Build rule for target.
-Read_Write_lib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Read_Write_lib
+# Convenience name for target.
+Read_Write_lib: src_lib/CMakeFiles/Read_Write_lib.dir/rule
+
 .PHONY : Read_Write_lib
 
 # fast build rule for target.
 Read_Write_lib/fast:
-	$(MAKE) -f src_lib/CMakeFiles/Read_Write_lib.dir/build.make src_lib/CMakeFiles/Read_Write_lib.dir/build
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(MAKE) -f src_lib/CMakeFiles/Read_Write_lib.dir/build.make src_lib/CMakeFiles/Read_Write_lib.dir/build
 .PHONY : Read_Write_lib/fast
 
-#=============================================================================
-# Target rules for targets named App
+read_write.o: read_write.c.o
 
-# Build rule for target.
-App: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 App
-.PHONY : App
+.PHONY : read_write.o
 
-# fast build rule for target.
-App/fast:
-	$(MAKE) -f src_app/CMakeFiles/App.dir/build.make src_app/CMakeFiles/App.dir/build
-.PHONY : App/fast
+# target to build an object file
+read_write.c.o:
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(MAKE) -f src_lib/CMakeFiles/Read_Write_lib.dir/build.make src_lib/CMakeFiles/Read_Write_lib.dir/read_write.c.o
+.PHONY : read_write.c.o
+
+read_write.i: read_write.c.i
+
+.PHONY : read_write.i
+
+# target to preprocess a source file
+read_write.c.i:
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(MAKE) -f src_lib/CMakeFiles/Read_Write_lib.dir/build.make src_lib/CMakeFiles/Read_Write_lib.dir/read_write.c.i
+.PHONY : read_write.c.i
+
+read_write.s: read_write.c.s
+
+.PHONY : read_write.s
+
+# target to generate assembly for a file
+read_write.c.s:
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(MAKE) -f src_lib/CMakeFiles/Read_Write_lib.dir/build.make src_lib/CMakeFiles/Read_Write_lib.dir/read_write.c.s
+.PHONY : read_write.c.s
 
 # Help Target
 help:
@@ -145,7 +161,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Read_Write_lib"
-	@echo "... App"
+	@echo "... read_write.o"
+	@echo "... read_write.i"
+	@echo "... read_write.s"
 .PHONY : help
 
 
@@ -157,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/vany/Desktop/work/myproject/training_assign/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

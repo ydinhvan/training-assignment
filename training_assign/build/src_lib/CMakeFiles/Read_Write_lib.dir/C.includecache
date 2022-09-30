@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include_lib/header_lib.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+signal.h
+-
+
+/home/vany/Desktop/work/myproject/training_assign/src_lib/read_write.c
+header_lib.h
+/home/vany/Desktop/work/myproject/training_assign/src_lib/header_lib.h
+

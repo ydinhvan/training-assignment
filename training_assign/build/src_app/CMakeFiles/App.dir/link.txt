@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/App.dir/main.c.o CMakeFiles/App.dir/execute_command.c.o CMakeFiles/App.dir/signal_handler.c.o  -o App  ../src_lib/libRead_Write_lib.a 

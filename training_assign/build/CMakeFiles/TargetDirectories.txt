@@ -1,3 +1,8 @@
 /home/vany/Desktop/work/myproject/training_assign/build/CMakeFiles/rebuild_cache.dir
 /home/vany/Desktop/work/myproject/training_assign/build/CMakeFiles/edit_cache.dir
-/home/vany/Desktop/work/myproject/training_assign/build/CMakeFiles/training_exam_app.dir
+/home/vany/Desktop/work/myproject/training_assign/build/src_lib/CMakeFiles/rebuild_cache.dir
+/home/vany/Desktop/work/myproject/training_assign/build/src_lib/CMakeFiles/edit_cache.dir
+/home/vany/Desktop/work/myproject/training_assign/build/src_lib/CMakeFiles/Read_Write_lib.dir
+/home/vany/Desktop/work/myproject/training_assign/build/src_app/CMakeFiles/rebuild_cache.dir
+/home/vany/Desktop/work/myproject/training_assign/build/src_app/CMakeFiles/edit_cache.dir
+/home/vany/Desktop/work/myproject/training_assign/build/src_app/CMakeFiles/App.dir

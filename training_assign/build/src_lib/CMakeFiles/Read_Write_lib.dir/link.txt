@@ -1,0 +1,2 @@
+/usr/bin/ar qc libRead_Write_lib.a  CMakeFiles/Read_Write_lib.dir/read_write.c.o
+/usr/bin/ranlib libRead_Write_lib.a

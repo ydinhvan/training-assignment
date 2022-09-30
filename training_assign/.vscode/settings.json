@@ -2,6 +2,7 @@
     "files.associations": {
         "lib_training_exam.h": "c",
         "string.h": "c",
-        "signal.h": "c"
+        "signal.h": "c",
+        "header_app.h": "c"
     }
 }

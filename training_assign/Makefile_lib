@@ -1,0 +1,51 @@
+all: application
+
+# compiler
+CC = gcc
+
+# where to install
+INSTDIR = myapp
+
+# where are inlcude file kept
+INCLUDE = include/
+
+#Option for development
+#compile flag
+CFLAGS = -g -Wall 
+#-fsanitize=address
+#-fsanitize=address: building with Address Sanitzer:
+# memory access error such as use-after-free and memory leaks
+
+#linking flag
+#LDFLAGS = -fsanitize=address -static-libasan
+## -static-libasan: link to Asan library
+
+# Local Libraries
+MYLIB = mylib.a
+
+
+application: main.o execute_command.o signal_handler.o $(MYLIB)
+	$(CC) -o myapp main.o execute_command.o signal_handler.o $(MYLIB)
+
+# Build read_write library:
+$(MYLIB): $(MYLIB)(read_write.o)
+
+# compile file .c -> object file .o
+main.o: src/main.c include/lib_training_exam.h 
+	$(CC) -I$(INCLUDE) $(CFLAGS) -c src/main.c
+
+read_write.o: src/read_write.c include/lib_training_exam.h 
+	$(CC) -I$(INCLUDE) $(CFLAGS) -c src/read_write.c 
+
+execute_command.o: src/execute_command.c include/lib_training_exam.h
+	$(CC) -I$(INCLUDE) $(CFLAGS) -c src/execute_command.c 
+
+signal_handler.o: src/signal_handler.c include/lib_training_exam.h 
+	$(CC) -I$(INCLUDE) $(CFLAGS) -c src/signal_handler.c 
+#note: -I path to include directory
+
+#clean file 
+clean:
+	-rm *.o 
+	-rm myapp
+	-rm mylib.a 

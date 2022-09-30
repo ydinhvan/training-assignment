@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include_app/header_app.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+signal.h
+-
+
+../include_lib/header_lib.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+signal.h
+-
+
+/home/vany/Desktop/work/myproject/training_assign/src_app/execute_command.c
+header_app.h
+/home/vany/Desktop/work/myproject/training_assign/src_app/header_app.h
+
+/home/vany/Desktop/work/myproject/training_assign/src_app/main.c
+stdio.h
+-
+stdbool.h
+-
+header_app.h
+/home/vany/Desktop/work/myproject/training_assign/src_app/header_app.h
+header_lib.h
+/home/vany/Desktop/work/myproject/training_assign/src_app/header_lib.h
+
+/home/vany/Desktop/work/myproject/training_assign/src_app/signal_handler.c
+header_app.h
+/home/vany/Desktop/work/myproject/training_assign/src_app/header_app.h
+

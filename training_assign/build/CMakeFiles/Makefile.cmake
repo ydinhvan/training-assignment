@@ -10,6 +10,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../CMakeLists.txt"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
+  "../src_app/CMakeLists.txt"
+  "../src_lib/CMakeLists.txt"
   "/usr/share/cmake-3.16/Modules/CMakeCCompiler.cmake.in"
   "/usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c"
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
@@ -91,9 +93,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src_lib/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src_app/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/training_exam_app.dir/DependInfo.cmake"
+  "src_lib/CMakeFiles/Read_Write_lib.dir/DependInfo.cmake"
+  "src_app/CMakeFiles/App.dir/DependInfo.cmake"
   )
