@@ -5,20 +5,20 @@
 - source folder: contain the main file, c file: main.c, sum.c,..
 - include: contain the header file: main.h,..
 - build: where build file
-- Tree map
+- Common tree:
   - root: 
     - CmakeLists.txt
-    - Source file: 
-        - main.c
-        - sum.c
-        ...
-    - Include file:
-        - main.h
-        ...
+    - App: 
+        - source app: .c
+        - include file: .h
+        - CmakeLists.txt
+    - Library:
+        - source lib: .c
+        - include file: .h
+        - CMakeList.txt
     - Build:
         - CMakeFile
         - Makefile
-        ...
 
 #### **Step 2:** Write CMakeLists.txt
 cmake_minimum_required(VERSION 3.16.3)
@@ -45,6 +45,9 @@ add_executable(TARGET source_file)
 ### 3. Some commonly used command
 - **message**: prints given message
 - **cmake_minimum_required**: sets minimum version of cmake to be used
-- **add_executable**: adds executable target with given name
-- **add_library**: adds a library target to be build from listed source files
+- **add_executable**: build app
+- **add_library**: build a target library from source files
 - **add_subdirectory**: adds a subdirectory to build
+- **add_dependencies**: add target_dependencies
+- **target_link_libraries**: link library
+- **install**:
