@@ -50,10 +50,28 @@ add_executable(TARGET source_file)
 ### 3. Some commonly used command
 
 - **message**: prints given message
-- **cmake_minimum_required**: sets minimum version of cmake to be used
+- **cmake_minimum_required (VERSION 2.6)**: sets minimum version of cmake to be used
+- **project(Name)**: set project name
+- **find_package(PkgConfig)**: Find an external project, and load its settings
+- **pkg_check_modules(GLESv2 glesv2 REQUIRED)**: OpenGL ES
 - **add_executable**: build app
 - **add_library**: build a target library from source files
+- **find_program(WAYLAND_SCANNER_EXECUTABLE NAMES wayland-scanner)**: find program
+- **add_custom_command**: generating build file from xml file
+- add_custom_command(
+    OUTPUT  ivi-application-protocol.c
+    COMMAND ${WAYLAND_SCANNER_EXECUTABLE} code
+            < ${CMAKE_SOURCE_DIR}/protocol/ivi-application.xml          #input
+            > ${CMAKE_CURRENT_BINARY_DIR}/ivi-application-protocol.c    #output
+    DEPENDS ${CMAKE_SOURCE_DIR}/protocol/ivi-application.xml            #depend
+)
+- **include_directories**:Add include directories to the build
+include_directories(
+    ${GLESv2_INCLUDE_DIRS}
+)
+- **link_directories**: Add directories in which the linker will look for libraries
 - **add_subdirectory**: adds a subdirectory to build
 - **add_dependencies**: add target_dependencies
-- **target_link_libraries**: link library
-- **install**:
+- **target_link_libraries**: link object file to library
+- **install**: install a target to destination path
+- install (TARGETS EGLWL_Input_Event DESTINATION bin)
